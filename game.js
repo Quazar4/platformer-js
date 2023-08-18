@@ -20,8 +20,23 @@ draw(ctx) {
 
     ctx.fillStyle = 'red';
     ctx.fillRect(this.x, this.y -20, this.health / 2, 10)
+  }  
+}
+
+move(keyCode) {
+  // Left arrow key
+  if (keyCode === 37) {
+    this.vx = -this.speed;
   }
-  
+  // Right arrow key
+  else if (keyCode === 39) {
+    this.vx = this.speed;
+  }
+  // Up arrow key
+  else if (keyCode === 38 && this.onGround) {
+    this.vy = -this.jumpSpeed;
+    this.onGround = false;
+  }  
 }
 
 

@@ -78,5 +78,14 @@ update() {
   }
 }
 
+collidesWith(otherPlayer) {
+  return (
+    this.x < otherPlayer.x + otherPlayer.width &&
+    this.x + this.width > otherPlayer.x &&
+    this.y < otherPlayer.y + otherPlayer.height &&
+    this.y + this.height > otherPlayer.y    
+  );
+}
+
 
 } // End of play class (work in progress)

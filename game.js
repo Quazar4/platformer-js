@@ -39,5 +39,44 @@ move(keyCode) {
   }  
 }
 
+update() {
+  this.x += this.vx;
+  this.y += this.vy;
+
+  if(!this.onGround) {
+    this.vy += 1;
+  }
+  this.vx = 0;
+
+  let onPlatform = false;
+  for(let platform of platforms) {
+    if (
+      this.x < platform.x + platform.width &&
+      this.x + this.width > platform.x &&
+      this.y < platform.y + platform.height &&
+      this.y + this.height > platform.y
+    ) {
+      if(this.vy > 0) {
+        //move down
+        this.y = platform.y - this.height;
+        this.vy = 0;
+        onPlatform = true;        
+      }
+      //move up
+      else if(this.vy < 0) {
+        this.y = platform.y + platform.height;
+        this.vy = 0;        
+      }
+    }
+  }
+
+  if(onPlatform) {
+    this.onGround = true;
+  }
+  else {
+    this.onGround = false
+  }
+}
+
 
 } // End of play class (work in progress)

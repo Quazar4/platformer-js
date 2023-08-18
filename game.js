@@ -102,10 +102,20 @@ class Platform {
     this.height = height;
   }
 
+  draw(ctx) {
+    ctx.fillStyle = 'black';
+    ctx.fillRect(this.x, this.y, this.width, this.height);
+  }
+}
 
+const canvas = document.createElement('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+document.body.appendChild(canvas);
+const ctx = canvas.getContext('2d');
 
+const player1 = new Player(100, 100, 'red');
+const player2 = new Player(100, 100, 'blue');
 
-
-} //End of platfor class (work in progress)
 
 

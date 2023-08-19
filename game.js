@@ -133,4 +133,18 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+function update() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for (let platform of platforms) {
+    platform.draw(ctx)
+  }
+  player1.update();
+  player1.draw(ctx);
+
+  player2.update();
+  player2.draw(ctx);
+  
+  
+}
 

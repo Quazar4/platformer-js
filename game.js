@@ -164,5 +164,10 @@ function update() {
 
 update();
 
+const preventArrowScroll = (event) => {
+  if([37, 38, 39, 40].includes(event.keyCode)) {
+    event.preventDefault();
+  }
+};
 
 

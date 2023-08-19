@@ -126,5 +126,11 @@ document.addEventListener('keydown', (event) => {
   player1.move(event.keyCode);
 });
 
+document.addEventListener('keydown', (event) => {
+  //Space bar
+  if(event.keyCode === 32) {
+    player1.attack(player2);
+  }
+});
 
 

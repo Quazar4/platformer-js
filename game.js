@@ -144,7 +144,25 @@ function update() {
 
   player2.update();
   player2.draw(ctx);
-  
-  
+
+  if(player.health <= 0 || player2.health <= 0) {
+    ctx.font = '30px Arial';
+    ctx.fillStyle = 'black';
+    let winner;
+    if(player1.health <= 0) {
+      winner = 'Player 2'
+    }
+    else {
+      winner = 'Player 1'
+    }
+    ctx.fillText(`Game over, ${winner} won the game`, canvas.width / 2 - 150, canvas.height / 2);
+  }
+  else {
+    requestAnimationFrame(update);
+  }  
 }
+
+update();
+
+
 

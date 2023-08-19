@@ -170,4 +170,11 @@ const preventArrowScroll = (event) => {
   }
 };
 
+document.addEventListener('keydown', preventArrowScroll);
+
+document.addEventListener('keydown', (event) => {
+  if(event.keyCode === 37) {
+    document.removeEventListener('')
+  }
+})
 

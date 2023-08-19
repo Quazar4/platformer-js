@@ -117,5 +117,14 @@ const ctx = canvas.getContext('2d');
 const player1 = new Player(100, 100, 'red');
 const player2 = new Player(100, 100, 'blue');
 
+const platforms = [
+  new Platform(0, canvas.height - 50, canvas.width - 50),
+  new Platform(100, canvas.height - 150, 200, 20),
+];
+
+document.addEventListener('keydown', (event) => {
+  player1.move(event.keyCode);
+});
+
 
 
